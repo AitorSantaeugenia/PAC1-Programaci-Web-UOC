@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> PAC 1 - Exercicis</title>
+<script type="text/javascript">
+/* :::::::::::::::::::::::: Proves exercici 3 ::::::::::::::::::::::::*/
+//Exercici 3.A
+/*var x;
+x = ( "35" === 35 ) && ( "8" == 8);
+resultado = x;
+
+//Exercici 3.B
+var x, y;*/
+/*
+x=3; 
+y = -5;
+x=x-y+(++y);
+resultado = x;
+*/
+ 
+//Exercici 3.C
+ /*
+var x,y;
+x=2;
+x="23"+x++;
+resultado=x;
+
+//Exercici 3.D
+var x,y;
+x=true;
+y=false;
+
+x=(x&&(x || y));
+resultado=x;
+alert(resultado);*/
+ 
+//Altres proves
+/*var x,y,z;
+ 
+x=2;
+x=x++;
+y=x;
+resultado=y;
+alert(resultado);*/
+
+/* :::::::::::::::::::::::: Exercici 5 ::::::::::::::::::::::::*/
+/*
+var num;
+var resp;
+num =0;
+num = prompt("Introdueix número d'alumnes", "");
+do {
+	resp=prompt("Introdueix el nom de l'alumne", "");
+	document.write(resp + "<br>");
+	num--;
+}while(num!=0)
+*/
+/* :::::::::::::::::::::::: Exercici 6 ::::::::::::::::::::::::*/
+var num;
+var resp;
+num = 0;
+/*	if(num==null){
+	
+	}
+	*/
+	num = prompt("Introdueix número d'alumnes", "");
+		while (isNaN(num) || num==null || num==0){						//Poso lo del Null ja que sí cliques sobre Cancelar, obté Null com a valor
+			alert("El numero introduit no es correcte");				//Avisa de que el numero no es el correcte
+			num = prompt("Introdueix número d'alumnes", "");			//Si es Null o 0 o no és un número, tornam a demanar el número
+			
+		}
+		
+// El problema es que si escribim algo per promp sempre sera string, igualment he fet una validacio per si de cas
+		do {
+				resp=prompt("Introdueix el nom de l'alumne", "");
+				if(typeof resp==='string' && resp!==undefined && /^[ a-zA-ZñÑáéíóöüïéúàèìòù]+$/i.test(resp)){		//Ja se que lo de la validació, hi ha paraules que no importaría que les posem, pero por si a caso
+					document.write(resp + ("<span style=\"color:black;\">") +  "<br>");
+					num--;
+					}else{
+						document.write(resp + ("<span style=\"color:red;\"> - El nom introduit no és vàlid" + "<span style=\"color:black;\"> <br>"));	// El que faig aquí es donarli color al error, i posarli color de nou al BR com a trampa, ja que sinó el seguent nom es veia de color vermell
+					}
+		}while(num!=0)
+		
+		 /*function validarLetras(resp) { // 1
+			tecla = (document.all) ? resp.keyCode : resp.which;
+			if (tecla==8) return true; // backspace
+			if (tecla==32) return true; // espacio
+			if (resp.ctrlKey && tecla==86) { return true;} //Ctrl v
+			if (resp.ctrlKey && tecla==67) { return true;} //Ctrl c
+			if (resp.ctrlKey && tecla==88) { return true;} //Ctrl x
+		 
+			patron = /[a-zA-Z]/; //patron
+		 
+			te = String.fromCharCode(tecla);
+			return patron.test(te); // prueba de patron
+		} */
+</script>
+</head>
+ 
+<body>
+<p><input  type="button" name="Refresca" value="Refresca" onclick="document.location.reload();"></p>
+</body>
+</html>

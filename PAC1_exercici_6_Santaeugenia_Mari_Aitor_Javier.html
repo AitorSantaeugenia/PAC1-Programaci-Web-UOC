@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> PAC 1 - Exercici 6</title>
+<script type="text/javascript">
+/* :::::::::::::::::::::::: Exercici 6 ::::::::::::::::::::::::*/
+var num;
+var resp;
+num = 0;
+
+	num = prompt("Introdueix número d'alumnes", "");
+		while (isNaN(num) || num==null || num==0){						//Poso lo del Null ja que sí cliques sobre Cancelar, obté Null com a valor
+			alert("El numero introduit no es correcte");				//Avisa de que el numero no es el correcte
+			num = prompt("Introdueix número d'alumnes", "");			//Si es Null o 0 o no és un número, tornam a demanar el número
+			
+		}
+		
+// El problema es que si escribim algo per promp sempre sera string, igualment he fet una validacio per si de cas
+		do {
+				resp=prompt("Introdueix el nom de l'alumne", "");
+				if(typeof resp==='string' && resp!==undefined && (/^[ a-zA-ZñÑáéíóöüïéúàèìòù]+$/i.test(resp))){		//Ja se que lo de la validació, hi ha paraules que no importaría que les posem, pero por si a caso
+					document.write(resp + ("<span style=\"color:black;\">") +  "<br>");
+					num--;
+					}else{
+						document.write(resp + ("<span style=\"color:red;\"> - El nom introduit no és vàlid" + "<span style=\"color:black;\"> <br>"));	// El que faig aquí es donarli color al error, i posarli color de nou al BR com a trampa, ja que sinó el seguent nom es veia de color vermell
+					}
+		}while(num!=0)
+</script>
+</head>
+ 
+<body>
+<p><input  type="button" name="Refresca" value="Refresca" onclick="document.location.reload();"></p>
+</body>
+</html>
