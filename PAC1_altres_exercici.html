@@ -49,7 +49,7 @@ alert(resultado);*/
 var num;
 var resp;
 num =0;
-num = prompt("Introdueix número d'alumnes", "");
+num = prompt("Introdueix nÃºmero d'alumnes", "");
 do {
 	resp=prompt("Introdueix el nom de l'alumne", "");
 	document.write(resp + "<br>");
@@ -64,21 +64,21 @@ num = 0;
 	
 	}
 	*/
-	num = prompt("Introdueix número d'alumnes", "");
-		while (isNaN(num) || num==null || num==0){						//Poso lo del Null ja que sí cliques sobre Cancelar, obté Null com a valor
+	num = prompt("Introdueix nÃºmero d'alumnes", "");
+		while (isNaN(num) || num==null || num==0){						//Poso lo del Null ja que sÃ­ cliques sobre Cancelar, obtÃ© Null com a valor
 			alert("El numero introduit no es correcte");				//Avisa de que el numero no es el correcte
-			num = prompt("Introdueix número d'alumnes", "");			//Si es Null o 0 o no és un número, tornam a demanar el número
+			num = prompt("Introdueix nÃºmero d'alumnes", "");			//Si es Null o 0 o no Ã©s un nÃºmero, tornam a demanar el nÃºmero
 			
 		}
 		
 // El problema es que si escribim algo per promp sempre sera string, igualment he fet una validacio per si de cas
 		do {
 				resp=prompt("Introdueix el nom de l'alumne", "");
-				if(typeof resp==='string' && resp!==undefined && /^[ a-zA-ZñÑáéíóöüïéúàèìòù]+$/i.test(resp)){		//Ja se que lo de la validació, hi ha paraules que no importaría que les posem, pero por si a caso
+				if(typeof resp==='string' && resp!==undefined && /^[ a-zA-ZÃ±Ã‘Ã¡Ã©Ã­Ã³Ã¶Ã¼Ã¯Ã©ÃºÃ Ã¨Ã¬Ã²Ã¹]+$/i.test(resp)){		//Ja se que lo de la validaciÃ³, hi ha paraules que no importarÃ­a que les posem, pero por si a caso
 					document.write(resp + ("<span style=\"color:black;\">") +  "<br>");
 					num--;
 					}else{
-						document.write(resp + ("<span style=\"color:red;\"> - El nom introduit no és vàlid" + "<span style=\"color:black;\"> <br>"));	// El que faig aquí es donarli color al error, i posarli color de nou al BR com a trampa, ja que sinó el seguent nom es veia de color vermell
+						document.write(resp + ("<span style=\"color:red;\"> - El nom introduit no Ã©s vÃ lid" + "<span style=\"color:black;\"> <br>"));	// El que faig aquÃ­ es donarli color al error, i posarli color de nou al BR com a trampa, ja que sinÃ³ el seguent nom es veia de color vermell
 					}
 		}while(num!=0)
 		
